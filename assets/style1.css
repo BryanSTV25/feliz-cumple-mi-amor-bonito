@@ -1,0 +1,238 @@
+/*body {
+    margin: 0;
+    background: #020202;
+    cursor: crosshair;
+}
+canvas{
+    display:block
+}
+h1 {
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    font-family: "Pacifico", cursive;
+    font-size: 2.5em;
+    font-weight: 900;
+    -webkit-user-select: none;
+    user-select: none;
+    text-align: center;
+}
+
+#message {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 1.5em;
+    color: #fff;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 3px solid #fff;
+    font-family: Arial, sans-serif;
+    font-weight: 400;
+    -webkit-user-select: none;
+    user-select: none;
+    
+    margin-bottom: 20px;
+}
+*/
+
+
+
+
+
+
+
+/*body {
+    margin: 0;
+    background: #020202;
+    cursor: crosshair;
+    font-family: Arial, sans-serif;
+}
+
+
+canvas {
+    display: block;
+    width: 100%;
+    height: 100vh;  Ajusta el alto al tamaño de la ventana 
+}
+
+
+h1 {
+    position: absolute;
+    top: 20%;  
+    left: 50%;  
+    transform: translate(-50%, -50%); 
+    color: #fff;
+    font-family: "Pacifico", cursive;
+    font-size: 3.5vw; 
+    font-weight: 900;
+    -webkit-user-select: none;
+    user-select: none;
+    text-align: center;
+    margin: 0;
+}
+
+
+#message {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 2.5vw;  
+    color: #fff;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 3px solid #fff;
+    font-family: Arial, sans-serif;
+    font-weight: 400;
+    -webkit-user-select: none;
+    user-select: none;
+    margin-bottom: 5vh; 
+}
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 5vw;
+    }
+
+    #message {
+        font-size: 5vw; 
+        top: 35%; 
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 7vw; 
+    }
+
+    #message {
+        font-size: 6vw;  
+        top: 40%;
+    }
+}*/
+
+
+/* Estilos generales */
+body {
+    margin: 0;
+    background: #020202;
+    cursor: crosshair;
+    font-family: Arial, sans-serif;
+}
+
+/* El canvas debe ocupar todo el espacio disponible */
+canvas {
+    display: block;
+    width: 100%;
+    height: 100vh; /* Ajusta el alto al tamaño de la ventana */
+}
+
+/* Estilo del encabezado */
+h1 {
+    position: absolute;
+    top: 20%;  /* 20% desde la parte superior de la pantalla */
+    left: 50%;  /* Centrado horizontal */
+    transform: translate(-50%, -50%); /* Centrado exacto */
+    color: #fff;
+    font-family: "Pacifico", cursive;
+    font-size: 3.5vw; /* Usamos vw para que el tamaño sea relativo al ancho de la ventana */
+    font-weight: 900;
+    -webkit-user-select: none;
+    user-select: none;
+    text-align: center;
+    margin: 0;
+}
+
+/* Estilo del mensaje */
+#message {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 2.5vw;  /* Usamos unidades vw para escalabilidad */
+    color: #fff;
+    white-space: normal;  /* Cambiar de nowrap a normal para permitir que el texto se divida */
+    word-wrap: break-word;  /* Permite que las palabras largas se dividan en múltiples líneas */
+    overflow: hidden;
+    border-right: 3px solid #fff;
+    font-family: Arial, sans-serif;
+    font-weight: 400;
+    -webkit-user-select: none;
+    user-select: none;
+    margin-bottom: 5vh; /* Utilizamos vh para que el margen sea relativo al alto de la ventana */
+    max-width: 90%; /* Aseguramos que el mensaje no se extienda más allá del 90% del ancho de la pantalla */
+    text-align: center;
+}
+
+
+/* Animación de desaparición */
+@keyframes fadeOut {
+    0% {
+        opacity: 1; /* El texto es completamente visible al inicio */
+    }
+    100% {
+        opacity: 0; /* El texto desaparece al final del ciclo */
+    }
+}
+
+/* Consultas de medios para adaptarse a diferentes tamaños de pantalla */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 5vw;  /* Aumentar el tamaño del título en pantallas más pequeñas */
+    }
+
+    #message {
+        font-size: 5vw;  /* Aumentar el tamaño del mensaje en pantallas más pequeñas */
+        top: 35%; /* Ajustamos la posición en pantallas pequeñas */
+        max-width: 90%; /* Reducir el ancho máximo para asegurarse de que el texto se divida */
+    }
+}
+
+@media (max-width: 480px) {
+    #playMusicButton{
+        top: 10%;
+    }
+    
+    h1 {
+        top: 30%;
+        font-size: 7vw; /* Aumentar aún más en pantallas muy pequeñas */
+    }
+
+    #message {
+        font-size: 5vw;  /* Aumentar el tamaño aún más */
+        top: 50%;
+        max-width: 85%; /* Reducir aún más el ancho máximo */
+        text-align: center;
+        background-color: rgba(169, 169, 169, 0.2);
+    }
+}
+
+/* Center the button under the h1 */
+#playMusicButton {
+    display: block;
+    margin: 20px auto;
+    width: 60px; /* Width of the button */
+    height: 60px; /* Height of the button */
+    background-color: red; /* Red background */
+    border: none; /* No border */
+    border-radius: 50%; /* Round button */
+    color: white; /* White text/icon */
+    font-size: 30px; /* Icon size */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s ease; /* Smooth color change */
+}
+
+#playMusicButton:hover {
+    background-color: darkred; /* Darker red when hovered */
+}
+
+#playIcon {
+    color: white; /* Ensure icon is white */
+}
